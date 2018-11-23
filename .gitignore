@@ -1,0 +1,8 @@
+packages
+.vs
+
+app/.firebase
+app/.idea
+app/build
+app/node_modules
+app/package-lock.json
