@@ -5,7 +5,7 @@ import Head from './head';
 import {routes as routesAccount} from "../pages/account";
 
 const UnItem = (props)=> {
-    var {item, index, isAuth} = props;
+    var {item, key, isAuth} = props;
 
     if (item.name === '-')
         return <Divider/>;
@@ -16,7 +16,7 @@ const UnItem = (props)=> {
         </ListItem>;
 
     if (item.isPublic === true || isAuth === true)
-        return <Link key={index} to={{pathname: item.path}} style={{textDecoration: 'none'}}>
+        return <Link key={key} to={{pathname: item.path}} style={{textDecoration: 'none'}}>
             <ListItem button>
                 <ListItemText primary={item.name}/>
             </ListItem>
@@ -58,7 +58,7 @@ class Component extends React.Component {
 
             <List component="nav" onClick={this.handleClose} onKeyDown={this.handleClose}>
                 {links.map((item, index) =>
-                    <UnItem item={item} index={index} isAuth={isAuth}></UnItem>
+                    <UnItem item={item} key={index} isAuth={isAuth}></UnItem>
                 )}
             </List>
 
