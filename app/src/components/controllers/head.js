@@ -1,6 +1,5 @@
 import React from 'react';
 import UserIcon from "@material-ui/icons/AccountCircle"
-import { routes } from './index';
 import {Button} from '@material-ui/core';
 import {strings} from '../../localization/strings';
 

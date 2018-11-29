@@ -1,17 +1,21 @@
 import React from 'react';
-import { Toolbar } from '../../controllers';
 import {connect} from "react-redux";
+import {Toolbar} from '../../controllers/index';
+import './_styles.css';
 
 class Component extends React.Component {
 
     render() {
-        return <section className={"page"}>
-            <Toolbar title={'Home'} menuButton/>
+        var id = this.props.location.pathname.substring(this.props.match.path.length+1).split("/")[0];
 
+        return <section className={"page"}>
+            <Toolbar title={"One Product"} backButton={()=>this.props.history.goBack()} />
             <div className={"content-wrapper"}>
                 <div className={"overflow-container"}>
                     {/* -------------------- Content --------------------*/}
-                    <h5>{!!this.props.account.currentUser ? this.props.account.currentUser.email : 'no user'}</h5>
+
+                    id:{id}
+
                     {/* -------------------- Content --------------------*/}
                 </div>
             </div>
@@ -20,7 +24,6 @@ class Component extends React.Component {
 }
 
 const mapDispatchToProps = {};
-const mapStateToProps = store => ({ account: store.account });
+const mapStateToProps = store => ({ });
 export default connect(mapStateToProps, mapDispatchToProps)(Component);
-
 

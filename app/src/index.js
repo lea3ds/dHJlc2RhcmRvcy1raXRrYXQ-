@@ -6,8 +6,8 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from "react-router-dom";
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import primaryPalette from '@material-ui/core/colors/teal';
-import secondaryPalette from '@material-ui/core/colors/brown';
+// import primaryPalette from '@material-ui/core/colors/teal';
+// import secondaryPalette from '@material-ui/core/colors/brown';
 import errorPalette from '@material-ui/core/colors/orange';
 import noSeQueEsPalette from '@material-ui/core/colors/green';
 
@@ -27,8 +27,6 @@ import reducers from "./reducers"
 // createStore --------------------------------------------
 const logger = createLogger();
 const store = createStore(reducers, applyMiddleware(thunk, logger, ));
-
-
 
 const pudoYellow={ light: '#ffe74c', main: '#f7b500', dark: '#bf8600',contrastText: '#000000' };
 const pudoGrey= { light: '#e2e2db', main: '#b0b0a9', dark: '#81817a',contrastText: '#000000' };

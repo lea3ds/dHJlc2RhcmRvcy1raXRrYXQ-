@@ -7,12 +7,12 @@ import {Dialog, Menu} from '../controllers';
 
 import { routes as routesAccount } from '../pages/account';
 import { routes as routesHome } from '../pages/home';
-import { routes as routesProducts } from '../pages/products';
+import { routes as routesProduct } from '../pages/product/index';
 
 const menuLinks = [
     {name:'Home', ...routesHome.home },
     {name:'HomePrivate', ...routesHome.homePrivate },
-    {name:'Products', ...routesProducts.root },
+    {name:'Product', ...routesProduct.root },
     {name: '-' },
     // {name:'User LogIn', ...routesAccount.login },
     // {name:'User LogOut', ...routesAccount.logout },
@@ -23,7 +23,7 @@ const menuLinks = [
 class Component extends React.Component {
 
     allRoutes = [].concat(
-        Object.values(routesProducts),
+        Object.values(routesProduct),
         Object.values(routesAccount),
         Object.values(routesHome),
     ).filter(x => !!x.component);

@@ -120,7 +120,7 @@ const inTransaction = async (fun, url, data, config) => {
     var maxRetries = 3;
     var errorResponse;
     let newId = storageGet(storageKeys.transactionId);
-    if (!!newId) newId = parseInt(newId) + 1; else newId = 1;
+    if (!!newId) newId = parseInt(newId,10) + 1; else newId = 1;
     storageSet(storageKeys.transactionId, newId);
 
     for (let i = 1; i <= maxRetries; i++) {
@@ -138,7 +138,7 @@ const inTransaction = async (fun, url, data, config) => {
             if (errorResponse.type === 'authenticating')
                 await new Promise(resolve => setTimeout(resolve, 500));
             if (errorResponse.type === 'connectionLost')
-                maxRetries=0;
+                maxRetries = 0;
         }
     }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 //import {updatePassword} from "./_actions";
 import { strings, routes } from './index';
-import { Form, Toolbar, Loader } from '../../controllers/index';
+import {  Toolbar, Loader } from '../../controllers/index';
 import './styles.css';
 
 import {Button,IconButton} from '@material-ui/core';

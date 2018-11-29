@@ -1,5 +1,5 @@
 import * as conn from "../../actions/connection";
-import { remoteUrl } from './';
+// import { remoteUrl } from './';
 
 export const sync = () => (dispatch, getState) => {
     var arrays = getState().dataArrays;

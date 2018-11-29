@@ -11,7 +11,7 @@ const styles = {
 class Component extends React.Component {
 
     render() {
-        return <Typography variant="title" color="inherit" style={styles.flex}>
+        return <Typography variant="h6" color="inherit" style={styles.flex}>
             {this.props.title}
         </Typography>;
     }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
 import {sendEmailVerification} from "./_actions";
-import {routes, strings} from './index';
 import { Toolbar,Loader } from '../../controllers/index';
 
 class Component extends React.Component {

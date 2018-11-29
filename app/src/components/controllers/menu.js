@@ -2,10 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {Drawer,Divider,List,ListItem,ListItemText} from '@material-ui/core';
 import Head from './head';
-import {routes as routesAccount} from "../pages/account";
 
 const UnItem = (props)=> {
-    var {item, key, isAuth} = props;
+    var {item, isAuth} = props;
 
     if (item.name === '-')
         return <Divider/>;
@@ -16,7 +15,7 @@ const UnItem = (props)=> {
         </ListItem>;
 
     if (item.isPublic === true || isAuth === true)
-        return <Link key={key} to={{pathname: item.path}} style={{textDecoration: 'none'}}>
+        return <Link to={{pathname: item.path}} style={{textDecoration: 'none'}}>
             <ListItem button>
                 <ListItemText primary={item.name}/>
             </ListItem>
@@ -24,7 +23,6 @@ const UnItem = (props)=> {
 
     return null;
 }
-
 
 class Component extends React.Component {
     state = {
@@ -57,9 +55,7 @@ class Component extends React.Component {
             />
 
             <List component="nav" onClick={this.handleClose} onKeyDown={this.handleClose}>
-                {links.map((item, index) =>
-                    <UnItem item={item} key={index} isAuth={isAuth}></UnItem>
-                )}
+                {links.map((item, index) =><UnItem item={item} key={index} isAuth={isAuth} />)}
             </List>
 
         </Drawer>;
