@@ -1,9 +1,6 @@
-Lean Info.txt
-
 app/build
 app/node_modules
 app/package-lock.json
-
 app/.env
 
 app/.env.production
@@ -12,3 +9,4 @@ app/.firebase
 app/.firebaserc
 
 app/.idea
+Lean Info.txt
