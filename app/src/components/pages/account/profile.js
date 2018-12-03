@@ -37,12 +37,12 @@ class Component extends React.Component {
                         </div>
                         <div className={"item"}>
                             <div className={"key"}>Nombre</div>
-                            <div className={"value"}>Leandro</div>
+                            <div className={"value"}>No te importa</div>
                             <div className={"action"}><IconButton><EditIcon/></IconButton></div>
                         </div>
                         <div className={"item"}>
                             <div className={"key"}>Apellido</div>
-                            <div className={"value"}>Sarti</div>
+                            <div className={"value"}>Esto tampoco importa</div>
                             <div className={"action"}><IconButton><EditIcon/></IconButton></div>
                         </div>
                         <div className={"item"}>

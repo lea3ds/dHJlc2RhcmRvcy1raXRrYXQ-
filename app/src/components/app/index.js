@@ -4,20 +4,18 @@ import { withRouter } from "react-router-dom";
 
 import Router from './router'
 import {Dialog, Menu} from '../controllers';
+import NotFound from '../pages/not-found'
 
+import { routes as routesProduct } from '../pages/product/index';
 import { routes as routesAccount } from '../pages/account';
 import { routes as routesHome } from '../pages/home';
-import { routes as routesProduct } from '../pages/product/index';
+
 
 const menuLinks = [
     {name:'Home', ...routesHome.home },
     {name:'HomePrivate', ...routesHome.homePrivate },
     {name:'Product', ...routesProduct.root },
-    {name: '-' },
-    // {name:'User LogIn', ...routesAccount.login },
-    // {name:'User LogOut', ...routesAccount.logout },
-    // {name:'User Update Password', ...routesAccount.password },
-    // {name:'User Validate Mail', ...routesAccount.sendEmailVerification },
+    {name: '-'},
 ];
 
 class Component extends React.Component {
@@ -26,10 +24,10 @@ class Component extends React.Component {
         Object.values(routesProduct),
         Object.values(routesAccount),
         Object.values(routesHome),
+        {path: "*", component: NotFound, isPublic: true , status:404, exact:true},
     ).filter(x => !!x.component);
 
     render() {
-
         var profileMock = {name:'Leandro',lastName:'Demo',email:'leandroDemo@gmail.demo'};
         return (
             <section>

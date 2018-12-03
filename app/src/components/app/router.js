@@ -8,9 +8,11 @@ export const Component = (props) => {
             !!!x.component
                 ? null
                 : <Route
+                    basename={'/home'}
                     key={index}
                     exact={x.exact === false ? false : true}
                     path={x.path}
+                    status = {x.status?x.status:null}
                     //component = {e =>React.createElement(x.component, { ...e })}
                     render={e =>
                         <RouteChecker

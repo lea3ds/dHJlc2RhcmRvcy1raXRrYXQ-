@@ -10,6 +10,7 @@ var config = {
     messagingSenderId: "179500673490"
 };
 
+
 export const initialize = ()  => {
     return new Promise((resolve, reject) => {
         try {
