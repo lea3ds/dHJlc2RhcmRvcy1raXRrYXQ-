@@ -1,4 +1,4 @@
-import './_styles.css';
+import './_style.css';
 import React from 'react';
 import {connect} from "react-redux";
 import {getProducts} from "./_actions";

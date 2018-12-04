@@ -4,17 +4,18 @@ import { withRouter } from "react-router-dom";
 
 import Router from './router'
 import {Dialog, Menu} from '../controllers';
-import NotFound from '../pages/not-found'
 
 import { routes as routesProduct } from '../pages/product/index';
 import { routes as routesAccount } from '../pages/account';
 import { routes as routesHome } from '../pages/home';
-
+import { routes as routesMap } from '../pages/map-google';
+import { routes as routesNotFound } from '../pages/not-found';
 
 const menuLinks = [
     {name:'Home', ...routesHome.home },
     {name:'HomePrivate', ...routesHome.homePrivate },
     {name:'Product', ...routesProduct.root },
+    {name:'Map', ...routesMap.root },
     {name: '-'},
 ];
 
@@ -24,7 +25,8 @@ class Component extends React.Component {
         Object.values(routesProduct),
         Object.values(routesAccount),
         Object.values(routesHome),
-        {path: "*", component: NotFound, isPublic: true , status:404, exact:true},
+        Object.values(routesMap),
+        Object.values(routesNotFound), // siempre ultimo!!!
     ).filter(x => !!x.component);
 
     render() {

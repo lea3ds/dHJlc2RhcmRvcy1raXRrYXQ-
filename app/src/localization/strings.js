@@ -1,16 +1,17 @@
 
 export const strings = {
     //get:(string)=>string,
+    page_not_found:'#Page Not Found',
 
     dialog_confirm:'#Ok',
 
-    menu_login:'Ingresar',
+    menu_login:'#Ingresar',
 
     account_login_title:'#LOGIN',
     account_login_username:'#username',
-    account_login_usernameError_regex:'Email no válido',
+    account_login_usernameError_regex:'#Email no válido',
     account_login_password:'#password',
-    account_login_passwordError_regex:'Contraseña no válida',
+    account_login_passwordError_regex:'#Contraseña no válida',
     account_login_confirm:'#Login',
     account_login_failure_title:'#Error',
     account_login_failure_message:'#Ups!',

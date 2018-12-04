@@ -1,14 +1,19 @@
 
+import Loader from './loaders/blobs';
+
 import Dialog from './dialog';
 import Form from './form';
 import Menu from './menu';
-import Loader from './loaders/blobs';
-import Toolbar from './toolbar/toolbar';
+import Toolbar from './toolbar';
+import Map from './map';
+
+
 
 export {
+    Loader,
     Dialog,
     Form,
     Menu,
-    Loader,
     Toolbar,
+    Map,
 };

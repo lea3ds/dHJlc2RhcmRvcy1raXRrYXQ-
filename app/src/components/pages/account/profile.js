@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 //import {updatePassword} from "./_actions";
 import { strings, routes } from './index';
 import {  Toolbar, Loader } from '../../controllers/index';
-import './styles.css';
+import './_styles.css';
 
 import {Button,IconButton} from '@material-ui/core';
 import {Edit as EditIcon} from '@material-ui/icons';

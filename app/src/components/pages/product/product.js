@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {Toolbar} from '../../controllers/index';
-import './_styles.css';
+import './_style.css';
 
 class Component extends React.Component {
 

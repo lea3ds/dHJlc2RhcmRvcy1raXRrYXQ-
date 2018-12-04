@@ -1,24 +1,13 @@
-import React from 'react';
-import { Toolbar } from '../../controllers';
-import {connect} from "react-redux";
+// Global
+import {strings} from "../../../localization/strings";
 
-class Component extends React.Component {
+// Component
+import notFound from './notFound';
 
-    render() {
-        return <section className={"page"}>
-            <Toolbar title={'Home'} menuButton/>
-
-            <div className={"content-wrapper"}>
-                <div className={"overflow-container"}>
-                    {/* -------------------- Content --------------------*/}
-                    <div className={"page-not-found"}>Page Not Found</div>
-                    {/* -------------------- Content --------------------*/}
-                </div>
-            </div>
-        </section>;
-    }
+// Routes
+const routes = {
+    root: {path: "*", component: notFound, isPublic: true , status:404, exact:true}
 }
 
-const mapDispatchToProps = {};
-const mapStateToProps = store => ({  });
-export default connect(mapStateToProps, mapDispatchToProps)(Component);
+// Export
+export { routes, strings };
