@@ -1,5 +1,5 @@
-import {post} from "../../../actions/connection";
-import * as connection from '../../../_helpers/firebase';
+// import {post} from "../../../_helpers/connection/connection";
+import * as connection from '../../../_helpers/connection';
 
 export const register = (username,password) => (dispatch, getState) => {
     dispatch({type: 'ACCOUNT_REGISTER_REQUEST'});
@@ -87,22 +87,22 @@ export const reauthenticate = (username,password) => (dispatch, getState) => {
         })
 }
 
-
-export const password = (passwordOld,passwordNew) => (dispatch, getState) => {
-    return new Promise((resolve, reject) => {
-        let url = 'account/password';
-        let data = {passwordOld: passwordOld, passwordNew: passwordNew};
-        let reducer = 'ACCOUNT_PASSWORD';
-
-        dispatch({type: reducer + '_REQUEST'});
-        return post(url,data)
-            .then(x => {
-                dispatch({type: reducer + '_SUCCESS'});
-                return resolve(x);
-            })
-            .catch(x => {
-                dispatch({type: reducer + '_FAILURE'});
-                return reject(x);
-            })
-    })
-}
+//
+// export const password = (passwordOld,passwordNew) => (dispatch, getState) => {
+//     return new Promise((resolve, reject) => {
+//         let url = 'account/password';
+//         let data = {passwordOld: passwordOld, passwordNew: passwordNew};
+//         let reducer = 'ACCOUNT_PASSWORD';
+//
+//         dispatch({type: reducer + '_REQUEST'});
+//         return post(url,data)
+//             .then(x => {
+//                 dispatch({type: reducer + '_SUCCESS'});
+//                 return resolve(x);
+//             })
+//             .catch(x => {
+//                 dispatch({type: reducer + '_FAILURE'});
+//                 return reject(x);
+//             })
+//     })
+// }

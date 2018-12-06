@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/database';
 
 var config = {
     apiKey: "AIzaSyB3swGxChcXfcYMQge2faJQ1lDWp2GauTQ",
@@ -10,6 +11,8 @@ var config = {
     messagingSenderId: "179500673490"
 };
 
+/* -------------------------------------------------- */
+/* ---------- INIT ------------------------------- */
 
 export const initialize = ()  => {
     return new Promise((resolve, reject) => {
@@ -24,6 +27,9 @@ export const initialize = ()  => {
         }
     });
 }
+
+/* -------------------------------------------------- */
+/* ---------- AUTH ------------------------------- */
 
 export const handleStateChanged = (callback)  => {
     firebase.auth().onAuthStateChanged(callback);
@@ -152,7 +158,6 @@ export const deleteUser = ()  => {
     });
 }
 
-
 export const reauthenticate = (email,password)  => {
     return new Promise((resolve, reject) => {
         var credential = firebase.auth.EmailAuthProvider.credential(email, password);
@@ -166,4 +171,37 @@ export const reauthenticate = (email,password)  => {
                 reject(error);
             })
     });
+}
+
+/* -------------------------------------------------- */
+/* ---------- REST ---------------------------------- */
+
+export const getData = (key)  => {
+    return new Promise((resolve, reject) => {
+        firebase.database().ref(key)
+            .once('value')
+            .then(response => {
+                resolve(response.val());
+            })
+            .catch(error => {
+                console.error('getData.catch - error:', error);
+                reject(error);
+            })
+    });
+}
+
+
+export function setData(key,value) {
+    return new Promise((resolve, reject) => {
+        firebase.database().ref(key)
+            .set(value)
+            .then(response => {
+                resolve(response);
+            })
+            .catch(error => {
+                console.error('setData.catch - error:', error);
+                reject(error);
+            })
+    });
+
 }

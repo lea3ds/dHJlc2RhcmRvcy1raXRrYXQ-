@@ -1,12 +1,11 @@
 import React from 'react';
 import { Toolbar } from '../../controllers';
 import {connect} from "react-redux";
-import {strings} from "../../../localization/strings";
 import './_style.css';
 
 class Component extends React.Component {
-
     render() {
+        var {strings} = this.props.appStore;
         return <section className={"page"}>
             <Toolbar title={'Page not found'} menuButton/>
 
@@ -20,5 +19,5 @@ class Component extends React.Component {
 }
 
 const mapDispatchToProps = {};
-const mapStateToProps = store => ({  });
+const mapStateToProps = store => ({ appStore:store.app });
 export default connect(mapStateToProps, mapDispatchToProps)(Component);

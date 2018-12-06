@@ -1,4 +1,9 @@
+/*
+
+NO USED
+
 import axios from "axios";
+
 import * as queryString from 'querystring'
 var urlBase = process.env.REACT_APP_SERVER_ADDR;
 const TOKEN_PATH = 'token';
@@ -241,3 +246,5 @@ export const put=(url,key,data,config)=> {
     return inTransaction(axios.put, url, data, config);
 }
 //-- REST
+
+*/

@@ -5,13 +5,14 @@ import {connect} from "react-redux";
 class Component extends React.Component {
 
     render() {
+        console.log(this.props)
         return <section className={"page"}>
             <Toolbar title={'Home'} menuButton/>
 
             <div className={"content-wrapper"}>
                 <div className={"overflow-container"}>
                     {/* -------------------- Content --------------------*/}
-                    <h5>{!!this.props.account.currentUser ? this.props.account.currentUser.email : 'no user'}</h5>
+                    <h5>{!!this.props.accountStore.currentUser ? this.props.accountStore.currentUser.email : 'no user'}</h5>
                     {/* -------------------- Content --------------------*/}
                 </div>
             </div>
@@ -20,7 +21,7 @@ class Component extends React.Component {
 }
 
 const mapDispatchToProps = {};
-const mapStateToProps = store => ({ account: store.account });
+const mapStateToProps = store => ({ accountStore:store.account, appStore:store.app });
 export default connect(mapStateToProps, mapDispatchToProps)(Component);
 
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {openDrawer} from "../../../actions/appWraper";
 import {AppBar, Toolbar} from '@material-ui/core';
 
 import Title from './title';
@@ -27,7 +26,6 @@ class Component extends React.Component {
     }
 }
 
-
-const mapDispatchToProps = { openDrawer };
-const mapStateToProps = store => ({ appWraper: store.appWraper });
+const mapDispatchToProps = { };
+const mapStateToProps = store => ({ });
 export default connect(mapStateToProps, mapDispatchToProps)(Component);

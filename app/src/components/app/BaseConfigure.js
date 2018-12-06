@@ -7,7 +7,7 @@ class Component extends React.Component {
     state = {isReady: false}
 
     componentDidMount() {
-        if (!this.props.app.initialized && !this.props.app.initializing) {
+        if (!this.props.app.initialized && !this.props.app.initializeWorking) {
             this.props.initialize()
                 .catch(error => {
                     console.log('initializeApp.catch - error:', error);
@@ -17,9 +17,10 @@ class Component extends React.Component {
     }
 
     render() {
-        if (this.props.app.initializing === true) return <h3>initializing</h3>;
+        if (this.props.app.initializeWorking === true) return <div>initializeWorking</div>;
         if (this.props.app.initialized === true) return this.props.children;
-        return <h3>wait</h3>;
+
+        return <div>wait</div>;
     }
 }
 

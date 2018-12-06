@@ -1,4 +1,4 @@
-import * as conn from "../../actions/connection";
+import * as conn from "../../_helpers/connection/connection";
 // import { remoteUrl } from './';
 
 export const sync = () => (dispatch, getState) => {

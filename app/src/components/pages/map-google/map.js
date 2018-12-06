@@ -39,7 +39,7 @@ class Component extends React.Component {
 
     render() {
         return <section className={"page"}>
-            <Toolbar title={'Map google'} menuButton/>
+            <Toolbar title={'Map google'} backButton={()=>this.props.history.goBack()} />
 
             <div className={"content-wrapper"}>
                 {/* -------------------- Content --------------------*/}

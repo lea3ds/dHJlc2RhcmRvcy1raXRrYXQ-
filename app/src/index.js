@@ -22,7 +22,7 @@ import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger'
 
 // reducers -----------------------------------------------
-import reducers from "./reducers"
+import reducers from "./_reducers"
 
 // createStore --------------------------------------------
 const logger = createLogger();
@@ -43,12 +43,14 @@ const theme = createMuiTheme({
         danger: noSeQueEsPalette,
     },
     typography: {
+        useNextVariants: true, // https://material-ui.com/style/typography/#migration-to-typography-v2
         fontFamily: ['neutra',].join(','),
         fontSize: 16,
     },
 });
 
 // index render -------------------------------------------
+
 ReactDOM.render(
     <Provider store={store}>
         <BaseConfigure>

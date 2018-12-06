@@ -1,5 +1,4 @@
 // Global
-import {strings} from "../../../localization/strings";
 
 // Component
 import notFound from './notFound';
@@ -10,4 +9,4 @@ const routes = {
 }
 
 // Export
-export { routes, strings };
+export { routes };

@@ -1,4 +1,6 @@
-import * as connection from '../../_helpers/firebase';
+import * as connection from '../../_helpers/connection';
+
+// ++ STEPS CONTROLLER
 
 export const initialize = () => (dispatch, getState) => {
     return new Promise((resolve, reject) => {
@@ -8,9 +10,11 @@ export const initialize = () => (dispatch, getState) => {
 
             var steps = [
                 stepBegin(),
-                stepFirebaseInit(),
-                stepFirebaseSetAuthStateChangedHandler(),
-                stepAwaitAuth(),
+                firebaseInitialize(),
+                firebaseSetAuthStateChangedHandler(),
+                awaitAuth(),
+                //setStrings("es",getState().app.strings),
+                getStrings("es"),
                 stepEnd(),
             ];
 
@@ -42,12 +46,6 @@ export const initialize = () => (dispatch, getState) => {
     });
 }
 
-
-
-/*++ STEPS ++*/
-
-var isFirebaseInitialized = false;
-
 const stepError=(error) => (dispatch, getState) => {
     dispatch({type: 'APP_INITIALIZE_FAILURE'});
     return Promise.resolve();
@@ -63,13 +61,18 @@ const stepEnd = () => (dispatch, getState) => {
     return Promise.resolve();
 }
 
-const stepFirebaseInit = () => (dispatch, getState) => {
+// -- STEPS CONTROLLER
+
+// ++ FIREBASE INITIALIZE & AUTH
+
+const firebaseInitialize = () => (dispatch, getState) => {
     return connection.initialize()
         .then(x => Promise.resolve(x))
         .catch(x => Promise.reject(x))
 }
 
-const stepFirebaseSetAuthStateChangedHandler = () => (dispatch, getState) => {
+var isFirebaseInitialized = false;
+const firebaseSetAuthStateChangedHandler = () => (dispatch, getState) => {
     try {
         connection.handleStateChanged(user => {
             isFirebaseInitialized=true;
@@ -86,7 +89,8 @@ const stepFirebaseSetAuthStateChangedHandler = () => (dispatch, getState) => {
     }
 }
 
-const stepAwaitAuth = () => (dispatch, getState) => {
+const awaitAuth = () => (dispatch, getState) => {
+    return Promise.resolve();
     return new Promise((resolve, reject) => {
         var attemp = 0;
         var attempMax = 5 * 10;
@@ -104,4 +108,39 @@ const stepAwaitAuth = () => (dispatch, getState) => {
         }, 100);
     });
 }
-/*-- STEPS --*/
+
+// -- FIREBASE INITIALIZE & AUTH
+
+
+// ++ STRINGS
+
+export const setStrings = (language,strings) => (dispatch, getState) => {
+    var key = "strings/"+language;
+    var data = strings;
+    dispatch({type: 'APP_STRINGS_SET_REQUEST'});
+    return connection.setData(key,data)
+        .then(x => {
+            dispatch({type: 'APP_STRINGS_SET_SUCCESS',payload: x});
+            return Promise.resolve(x);
+        })
+        .catch(x => {
+            dispatch({type: 'APP_STRINGS_SET_FAILURE',payload: x});
+            return Promise.reject(x);
+        })
+}
+
+export const getStrings = (language) => (dispatch, getState) => {
+    var key = !language?"strings":"strings/"+language;
+    dispatch({type: 'APP_STRINGS_GET_REQUEST'});
+    return connection.getData(key)
+        .then(x => {
+            dispatch({type: 'APP_STRINGS_GET_SUCCESS',payload: x});
+            return Promise.resolve(x);
+        })
+        .catch(x => {
+            dispatch({type: 'APP_STRINGS_GET_FAILURE',payload: x});
+            return Promise.resolve(x);
+        })
+}
+
+// -- STRINGS
