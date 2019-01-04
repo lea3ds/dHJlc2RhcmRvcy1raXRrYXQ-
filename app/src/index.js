@@ -22,7 +22,7 @@ import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger'
 
 // reducers -----------------------------------------------
-import reducers from "./app-config/reducers"
+import reducers from "./_config/reducers"
 
 // createStore --------------------------------------------
 const logger = createLogger();

@@ -1,3 +1,4 @@
+import {strings} from "../../_config/localization/strings";
 
 import Loader from './loaders/blobs';
 
@@ -10,6 +11,7 @@ import Map from './map';
 
 
 export {
+    strings,
     Loader,
     Dialog,
     Form,

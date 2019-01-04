@@ -1,7 +1,7 @@
 import React from 'react';
 import UserIcon from "@material-ui/icons/AccountCircle"
 import {Button} from '@material-ui/core';
-import {strings} from "../../app-config/localization/strings";
+import {strings} from "./index";
 
 export const Head = ({isAuth,profile,handleProfileClick,handleLoginClick}) => {
 

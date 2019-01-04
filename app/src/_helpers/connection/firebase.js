@@ -3,7 +3,8 @@ import 'firebase/auth';
 import 'firebase/database';
 
 var config = {
-    apiKey: "AIzaSyB3swGxChcXfcYMQge2faJQ1lDWp2GauTQ",
+    //apiKey: "AIzaSyB3swGxChcXfcYMQge2faJQ1lDWp2GauTQ",
+    apiKey: process.env.FIREBASE_APIKEY,
     authDomain: "app1-5229e.firebaseapp.com",
     databaseURL: "https://app1-5229e.firebaseio.com",
     projectId: "app1-5229e",
@@ -17,6 +18,10 @@ var config = {
 export const initialize = ()  => {
     return new Promise((resolve, reject) => {
         try {
+            console.log("apiKey",config.apiKey)
+            console.log("FIREBASE_APIKEY",process.env.FIREBASE_APIKEY)
+            console.log("REACT_APP_GOOGLE_API_KEY",process.env.REACT_APP_GOOGLE_API_KEY)
+
             firebase.initializeApp(config);
             //firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL); // LOCAL, SESSION, NONE
             resolve();

@@ -1,5 +1,5 @@
 // Global
-import {strings} from "../../../app-config/localization/strings";
+import {strings} from "../../../_config/localization/strings";
 
 // Component
 import notFound from './notFound';

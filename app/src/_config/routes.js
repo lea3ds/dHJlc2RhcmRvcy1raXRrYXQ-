@@ -1,8 +1,8 @@
-import {routes as routesAccount} from "../components/pages/account";
-import {routes as routesMap} from "../components/pages/map-google";
-import {routes as routesNotFound} from "../components/pages/not-found";
-import {routes as routesHome} from "../components/pages/home";
-import {routes as routesProduct} from "../components/pages/product";
+import {routes as routesAccount} from "../components/pages/account/index";
+import {routes as routesMap} from "../components/pages/map-google/index";
+import {routes as routesNotFound} from "../components/pages/not-found/index";
+import {routes as routesHome} from "../components/pages/home/index";
+import {routes as routesProduct} from "../components/pages/product/index";
 
 
 export const routes = {

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import Router from './router'
 import {Dialog, Menu} from '../controllers';
-import {routes,getRoutesForRouter,menuLinks} from "../../app-config/routes"
+import {routes,getRoutesForRouter,menuLinks} from "../../_config/routes"
 
 class Component extends React.Component {
 

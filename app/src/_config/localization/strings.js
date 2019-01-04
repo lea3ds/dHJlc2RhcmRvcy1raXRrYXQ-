@@ -13,7 +13,7 @@ const getString = (key,value)=> {
 
 const setStringLanguage =(language)=> {
     console.log("setStringLanguage", language);
-    strings = strings; // aca hay que cargar del storage la que va
+    //strings = strings_del_STORAGE; // aca hay que cargar del storage la que va
     strings.getString = getString;
     strings.setStringLanguage = setStringLanguage;
     //saveLanguageStorage(language);

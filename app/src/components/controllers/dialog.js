@@ -1,5 +1,5 @@
 import React from 'react';
-import {strings} from "../../app-config/localization/strings";
+import {strings} from "./index";
 import {Dialog,DialogActions,DialogContent,DialogContentText,DialogTitle,Button} from '@material-ui/core';
 
 class Component extends React.Component {
