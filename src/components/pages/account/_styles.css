@@ -1,0 +1,72 @@
+/* + profile + */
+.profile {}
+
+.profile button {
+    height: 48px;
+}
+.profile .overflow-container {
+    padding: 0px 10px 20px 10px;
+}
+
+.profile .card {
+    max-width: 600px;
+    padding: 10px 2%;
+    margin: 20px auto 0px auto;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.profile .card .title{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    padding: 0px 0px;
+    min-height: 48px;
+    /*border: 1px solid;*/
+}
+.profile .card .title .value {
+    flex-grow: 1;
+    margin: auto;
+    font-size: 18px;
+    color: #f7b500;
+    /*border: 1px solid;*/
+}
+.profile .card .title .action {
+    width: 48px;
+    margin: auto;
+    /*border: 1px solid;*/
+}
+
+
+.profile .card .item:hover {
+    background: rgba(247, 181, 0, 0.1);
+    border-radius: 5px;
+}
+
+.profile .card .item{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    padding: 0px 0px;
+    height: 48px;
+    /*border: 1px solid;*/
+}
+.profile .card .item .key {
+    width: 100px;
+    margin: auto;
+    /*border: 1px solid;*/
+}
+.profile .card .item .value {
+    flex-grow: 1;
+    margin: auto;
+    /*border: 1px solid;*/
+}
+.profile .card .item .action {
+    width: 48px;
+    margin: auto;
+    /*border: 1px solid;*/
+}
+
+
+/* - profile - */

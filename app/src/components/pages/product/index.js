@@ -1,6 +1,6 @@
 // Global
 import reducer from './_reducer';
-import {strings} from "../../../localization/strings";
+import {strings} from "../../../app-config/localization/strings";
 
 // Component
 import products from './products';

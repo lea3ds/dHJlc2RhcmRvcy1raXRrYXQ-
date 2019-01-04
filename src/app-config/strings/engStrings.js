@@ -1,5 +1,4 @@
-
-export const strings = {
+export const engStrings = {
     //get:(string)=>string,
     page_not_found:'#Page Not Found',
 
@@ -8,7 +7,7 @@ export const strings = {
     menu_login:'#Ingresar',
 
     account_login_title:'#LOGIN',
-    account_login_username:'#username',
+    account_login_username:'username {username} y password {password} y un numero {5}.',
     account_login_usernameError_regex:'#Email no válido',
     account_login_password:'#password',
     account_login_passwordError_regex:'#Contraseña no válida',

@@ -1,7 +1,7 @@
 import './_style.css';
 
 // Global
-import {strings} from "../../../localization/strings";
+import {strings} from "../../../app-config/localization/strings";
 
 // Component
 import map from './map';

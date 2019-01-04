@@ -1,11 +1,16 @@
 import React from 'react';
 import { Toolbar } from '../../controllers';
 import {connect} from "react-redux";
+import {strings} from "../../../app-config/localization/strings";
 
 class Component extends React.Component {
 
+    componentDidMount() {
+        // setLanguage("eng");
+        //this.forceUpdate()
+    }
     render() {
-        console.log(this.props)
+        console.log("strings",strings.account_recovery_password)
         return <section className={"page"}>
             <Toolbar title={'Home'} menuButton/>
 

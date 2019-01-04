@@ -30,7 +30,7 @@ export const getRoutesForRouter = () => {
         return 0;
     }
     var response = Object.values(routes);
-    Object.values(routes).map(x => {response.push(...Object.values(x))});
+    Object.values(routes).map(x => {response.push(...Object.values(x));return null;});
     response=response.map(x => !x.path?{...x,path:"/"}:x);
     response=response.filter(x => !!x.component);
     response=response.sort(sortDesc);

@@ -8,7 +8,6 @@ import {routes,getRoutesForRouter,menuLinks} from "../../app-config/routes"
 class Component extends React.Component {
 
     render() {
-        var {strings} = this.props.appStore;
         var {currentUser} = this.props.accountStore;
 
         var profileMock = {name: 'Leandro', lastName: 'Demo', email: 'leandroDemo@gmail.demo'};
@@ -30,7 +29,6 @@ class Component extends React.Component {
                     history={this.props.history}
                     authPath={routes.account.root}
                     isAuthenticated={currentUser !== null}
-                    strings = {this.props.appStore.strings}
                 />
 
             </section>
@@ -41,6 +39,6 @@ class Component extends React.Component {
 }
 
 const mapDispatchToProps = { };
-const mapStateToProps = store => ({ appStore: store.app, accountStore: store.account });
+const mapStateToProps = store => ({ accountStore: store.account });
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Component));
 // el [withRouter] aca hace que renderice este componente cada vez que hay un cambio de URL

@@ -1,6 +1,25 @@
+export const getString = (key)=> {
+    var res = Object.keys(strings).find(key);
+    if(!res) return "#"+key+"#";
+    return res;
+}
 
-export const strings = {
-    //get:(string)=>string,
+const saveLanguageStorage=(language, strings, version)=>{
+    if (!!language) localStorage.setItem("STRINGS_CURRENT_LANGUAGE", language);
+    if (!!version) localStorage.setItem("STRINGS_"+language.toUpperCase()+"_VERSION", version);
+    if (!!strings) localStorage.setItem("STRINGS_"+language.toUpperCase(), strings);
+}
+
+export const setLanguage =(language)=> {
+    saveLanguageStorage(language);
+    strings = localStorage.getItem("STRINGS_"+language.toUpperCase());
+    // if (!strings) strings = defaultStrings;
+
+}
+
+
+export var strings = {
+
     page_not_found:'#Page Not Found',
 
     dialog_confirm:'#Ok',
@@ -51,3 +70,5 @@ export const strings = {
     account_signin_failure_message:'#Ups!',
 
 }
+
+export default strings;

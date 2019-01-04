@@ -1,0 +1,180 @@
+/*
+Colors
+
+ Primary={ light: '#ffe74c', main: '#f7b500', dark: '#bf8600',contrastText: '#000000' };
+ Secondary= { light: '#e2e2db', main: '#b0b0a9', dark: '#81817a',contrastText: '#000000' };
+
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    /*font-family: sans-serif;*/
+    /*font-family: neutra;*/
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+
+.page {
+    /* a container with flex-direction column */
+    /* height: 75vh; or position:absolute; height:100%; width: 100%; */
+    position:absolute;
+    height:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.page .toolbar {
+    /*height: 56px !important;*/
+}
+
+.page .content-wrapper {
+    /* this is the flex container that will take the rest of the height */
+    display: flex;
+    flex: 1;
+    min-height: 0px; /* IMPORTANT: you need this for non-chrome browsers */
+}
+
+.page .overflow-container {
+    /* the container for our overflowed content */
+    flex: 1;
+    overflow: auto;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+
+.menu-profile{
+    width: 100%;
+    background-color: #f7b500;
+    position: relative;
+    padding: 10px auto;
+}
+
+.menu-profile .unlogged {
+    padding: 10px;
+    color: white;
+}
+
+.menu-profile .logged {
+    display: block;
+    color: white;
+    /*border: 1px solid;*/
+}
+
+.menu-profile .logged .icon {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    /*border: 1px solid;*/
+}
+
+.menu-profile .logged .name {
+    font-size: 10px;
+    margin: auto;
+    /*border: 1px solid;*/
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+
+
+
+.animated-mount-section{
+    width:100%;
+    height:100%;
+}
+
+.reservationListButton{
+    height: 100%;
+    width: 50px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+}
+
+.full-screen-page{
+    height:100vh;
+    position:relative;
+    top:0;
+    left:0;
+    z-index: 300;
+}
+
+.centered-element-container{
+    text-align: center;
+    margin: 15px 0;
+}
+
+.page-container {
+    margin: 15px 0;
+}
+
+.section-page{
+    height:100%;
+    width: 100%;
+    position:absolute;
+    top:0;
+    left:0;
+    text-align: center;
+}
+
+.main-page-user-avatar{
+    max-height: 100px;
+    margin: auto;
+    display:block;
+}
+
+#map-section{
+    height:calc(100vh - 64px);
+}
+@media(max-width:768px){
+    #map-section{
+        height:calc(100vh - 57px)
+    }
+}
+
+#map{
+    height:100%;
+    width:100%;
+}
+
+.dimension-box-svg{
+    height:100px;
+    margin: auto;
+}
+
+.dimension-color-square{
+    height:25px;
+    width:25px;
+    border-radius: 15%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dimension-color-label{
+    display:inline-block;
+    margin: 0;
+    min-width:81px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.dimension-name-label{
+    font-size: 20px;
+    min-width: 70px;
+    font-weight: bold;
+    margin: 0 15px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+
+
+
+
+
