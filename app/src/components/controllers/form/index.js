@@ -1,5 +1,5 @@
 import React from 'react';
-import {regexs} from '../../../localization/regex';
+import {regexs} from '../../../app-config/regex';
 
 import TextControl from './TextControl'
 import ButtonControl from './ButtonControl'
