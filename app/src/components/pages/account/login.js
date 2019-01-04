@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import {login,logout} from "./_actions";
-import {strings,getString, routes} from './index';
+import {strings, routes} from './index';
 import { Form, Toolbar, Loader } from '../../controllers/index';
 
 class Component extends React.Component {
@@ -53,13 +53,13 @@ class Component extends React.Component {
                 <Form type='email' label={strings.account_login_username}
                       value={this.state.username}
                       onChange={e => this.setState({username: e.target.value,usernameError:e.target.error})}
-                      helperText = {!this.state.usernameError?null:getString('account_login_usernameError_'+this.state.usernameError)}
+                      helperText = {!this.state.usernameError?null:strings.getString('account_login_usernameError_'+this.state.usernameError)}
                 />
 
                 <Form type='password' label={strings.account_login_password}
                       value={this.state.password}
                       onChange={e => this.setState({password: e.target.value,passwordError:e.target.error})}
-                      helperText = {!this.state.passwordError?null:getString('account _login_passwordError_'+this.state.passwordError)}
+                      helperText = {!this.state.passwordError?null:strings.getString('account _login_passwordError_'+this.state.passwordError)}
                 />
 
                 <Form type='button' label={strings.account_login_confirm} variant="contained" color="primary"

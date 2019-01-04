@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 //import {updatePassword} from "./_actions";
-import { strings,setLanguage,routes } from './index';
+import { strings,routes } from './index';
 import {  Toolbar, Loader } from '../../controllers/index';
 import './_styles.css';
 
@@ -69,9 +69,9 @@ class Component extends React.Component {
                             <div className={"action"}></div>
                         </div>
                         <div className={"value"}>
-                            <Button color="primary" onClick={()=>setLanguage("empty")}>empty</Button>
-                            <Button color="primary" onClick={()=>setLanguage("esp")}>esp</Button>
-                            <Button color="primary" onClick={()=>setLanguage("eng")}>eng</Button>
+                            <Button color="primary" onClick={()=>{strings.setStringLanguage("empty");this.forceUpdate();}}>empty</Button>
+                            <Button color="primary" onClick={()=>{strings.setStringLanguage("esp");this.forceUpdate();}}>esp</Button>
+                            <Button color="primary" onClick={()=>{strings.setStringLanguage("eng");this.forceUpdate();}}>eng</Button>
                         </div>
                     </div>
 

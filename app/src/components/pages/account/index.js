@@ -1,5 +1,5 @@
 import reducer from './_reducer';
-import {strings,getString,setLanguage} from "../../../app-config/localization/strings";
+import {strings} from "../../../app-config/localization/strings";
 import login from './login';
 import signin from './signin';
 import logout from './logout';
@@ -30,5 +30,5 @@ const routes = {
 }
 
 
-export { reducer, routes, routesRoot, strings,getString,setLanguage };
+export { reducer, routes, routesRoot, strings };
 

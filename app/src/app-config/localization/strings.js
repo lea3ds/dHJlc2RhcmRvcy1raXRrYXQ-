@@ -1,24 +1,36 @@
-export const getString = (key)=> {
+const getString = (key,value)=> {
+    // reemplazar lso datos segun el value
     var res = Object.keys(strings).find(key);
     if(!res) return "#"+key+"#";
     return res;
 }
 
-const saveLanguageStorage=(language, strings, version)=>{
-    if (!!language) localStorage.setItem("STRINGS_CURRENT_LANGUAGE", language);
-    if (!!version) localStorage.setItem("STRINGS_"+language.toUpperCase()+"_VERSION", version);
-    if (!!strings) localStorage.setItem("STRINGS_"+language.toUpperCase(), strings);
-}
+// const saveLanguageStorage=(language, strings, version)=>{
+//     if (!!language) localStorage.setItem("STRINGS_CURRENT_LANGUAGE", language);
+//     if (!!version) localStorage.setItem("STRINGS_"+language.toUpperCase()+"_VERSION", version);
+//     if (!!strings) localStorage.setItem("STRINGS_"+language.toUpperCase(), strings);
+// }
 
-export const setLanguage =(language)=> {
-    saveLanguageStorage(language);
-    strings = localStorage.getItem("STRINGS_"+language.toUpperCase());
+const setStringLanguage =(language)=> {
+    console.log("setStringLanguage", language);
+    strings = strings; // aca hay que cargar del storage la que va
+    strings.getString = getString;
+    strings.setStringLanguage = setStringLanguage;
+    //saveLanguageStorage(language);
+    //strings = localStorage.getItem("STRINGS_"+language.toUpperCase());
     // if (!strings) strings = defaultStrings;
-
 }
 
+const getStringLanguage =()=> {
+    var language = "esp"; // aca hay que cargar del storage la que va
+    console.log("getStringLanguage", language);
+    return language;
+}
 
 export var strings = {
+    getString:getString,
+    getStringLanguage:getStringLanguage,
+    setStringLanguage:setStringLanguage,
 
     page_not_found:'#Page Not Found',
 
