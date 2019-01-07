@@ -2,14 +2,17 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 
+var apiKey = process.env.REACT_APP_FIREBASE_API_KEY;
+var projectId = process.env.REACT_APP_FIREBASE_PROJECT_ID;
+var messagingSenderId =  process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID;
+
 var config = {
-    //apiKey: "AIzaSyB3swGxChcXfcYMQge2faJQ1lDWp2GauTQ",
-    apiKey: process.env.FIREBASE_APIKEY,
-    authDomain: "app1-5229e.firebaseapp.com",
-    databaseURL: "https://app1-5229e.firebaseio.com",
-    projectId: "app1-5229e",
-    storageBucket: "app1-5229e.appspot.com",
-    messagingSenderId: "179500673490"
+    apiKey: apiKey,
+    authDomain: projectId+".firebaseapp.com",
+    databaseURL: "https://"+projectId+".firebaseio.com",
+    projectId: projectId,
+    storageBucket: projectId+".appspot.com",
+    messagingSenderId: messagingSenderId,
 };
 
 /* -------------------------------------------------- */
@@ -18,10 +21,6 @@ var config = {
 export const initialize = ()  => {
     return new Promise((resolve, reject) => {
         try {
-            console.log("apiKey",config.apiKey)
-            console.log("FIREBASE_APIKEY",process.env.FIREBASE_APIKEY)
-            console.log("REACT_APP_GOOGLE_API_KEY",process.env.REACT_APP_GOOGLE_API_KEY)
-
             firebase.initializeApp(config);
             //firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL); // LOCAL, SESSION, NONE
             resolve();

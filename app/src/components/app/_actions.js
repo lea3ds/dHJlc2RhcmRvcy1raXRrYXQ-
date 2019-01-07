@@ -88,23 +88,22 @@ const firebaseSetAuthStateChangedHandler = () => (dispatch, getState) => {
 }
 
 const awaitAuth = () => (dispatch, getState) => {
-    return Promise.resolve();
-    // return new Promise((resolve, reject) => {
-    //     var attemp = 0;
-    //     var attempMax = 5 * 10;
-    //
-    //     var awaitInterval = setInterval(() => {
-    //         attemp++;
-    //         if (isFirebaseInitialized) {
-    //             clearInterval(awaitInterval);
-    //             resolve();
-    //         }
-    //         if (attemp >= attempMax) {
-    //             clearInterval(awaitInterval);
-    //             reject();
-    //         }
-    //     }, 100);
-    // });
+    return new Promise((resolve, reject) => {
+        var attemp = 0;
+        var attempMax = 5 * 10;
+
+        var awaitInterval = setInterval(() => {
+            attemp++;
+            if (isFirebaseInitialized) {
+                clearInterval(awaitInterval);
+                resolve();
+            }
+            if (attemp >= attempMax) {
+                clearInterval(awaitInterval);
+                reject();
+            }
+        }, 100);
+    });
 }
 
 // -- FIREBASE INITIALIZE & AUTH

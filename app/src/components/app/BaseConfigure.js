@@ -19,7 +19,6 @@ class Component extends React.Component {
     render() {
         if (this.props.app.initializeWorking === true) return <div>initializeWorking</div>;
         if (this.props.app.initialized === true) return this.props.children;
-
         return <div>wait</div>;
     }
 }
