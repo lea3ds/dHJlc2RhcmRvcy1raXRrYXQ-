@@ -1,7 +1,13 @@
+
 const getString = (key,value)=> {
-    // reemplazar lso datos segun el value
-    var res = Object.keys(strings).find(key);
-    if(!res) return "#"+key+"#";
+    // var valueDemo = {username: "Roberto", age: 18};
+    var res = Object.keys(strings).find(x => x === key);
+    if (!res) return "#" + key + "#";
+    res = strings[res];
+    if (!!value) Object.keys(value).map(x => {
+        res = res.replace(new RegExp("{" + x + "}", 'g'), value[x]);
+        return x;
+    });
     return res;
 }
 
@@ -14,8 +20,7 @@ const getString = (key,value)=> {
 const setStringLanguage =(language)=> {
     console.log("setStringLanguage", language);
     //strings = strings_del_STORAGE; // aca hay que cargar del storage la que va
-    strings.getString = getString;
-    strings.setStringLanguage = setStringLanguage;
+    strings = {...strings, getString: getString, setStringLanguage: setStringLanguage};
     //saveLanguageStorage(language);
     //strings = localStorage.getItem("STRINGS_"+language.toUpperCase());
     // if (!strings) strings = defaultStrings;

@@ -59,7 +59,7 @@ class Component extends React.Component {
                 <Form type='password' label={strings.account_login_password}
                       value={this.state.password}
                       onChange={e => this.setState({password: e.target.value,passwordError:e.target.error})}
-                      helperText = {!this.state.passwordError?null:strings.getString('account _login_passwordError_'+this.state.passwordError)}
+                      helperText = {!this.state.passwordError?null:strings.getString('account_login_passwordError_'+this.state.passwordError)}
                 />
 
                 <Form type='button' label={strings.account_login_confirm} variant="contained" color="primary"
